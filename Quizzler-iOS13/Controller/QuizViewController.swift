@@ -15,6 +15,7 @@ class QuizViewController: UIViewController {
     
     //MARK: - IBoutlets and IBactions
 
+    @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var questionTextLabel: UILabel!
     
     @IBAction func answerButtonClicked(_ sender: UIButton) {
@@ -46,6 +47,11 @@ class QuizViewController: UIViewController {
        trueButton.backgroundColor = UIColor.clear
       falseButton.backgroundColor = UIColor.clear
     progressBarView.progress = quizBrain.getProgress()
+        if progressBarView.progress == 0.0 {
+            scoreLabel.text = "Score: 0"
+        } else {
+    scoreLabel.text = "Score: \(quizBrain.getScore())"
+        }
         
     
         

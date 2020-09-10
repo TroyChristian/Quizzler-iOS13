@@ -12,6 +12,7 @@ import UIKit
 struct QuizBrain {
     var questionNumber = 0
     var questionIndex = 0
+    var score = 0
     let quiz = [
         
         
@@ -32,14 +33,16 @@ struct QuizBrain {
     
     ]
     
-     func checkAnswer( _ userAnswer:String) -> UIColor {
+   mutating  func checkAnswer( _ userAnswer:String) -> UIColor {
        
         if userAnswer == quiz[questionNumber].answer {
-            
+            self.score += 1 //increase player score if they are correct
             return UIColor.green
             
+            
+            
         } else {
-           
+            self.score -= 1 //decrement player score if they are wrong
             return UIColor.red 
         }
         
@@ -62,6 +65,11 @@ struct QuizBrain {
         let increment = 1.0 / Float(self.quiz.count)
         var moveBy = increment * Float(questionNumber)
         return moveBy 
+        
+    }
+    
+    func getScore() -> Int {
+        return self.score 
         
     }
     
