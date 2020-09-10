@@ -58,6 +58,13 @@ struct QuizBrain {
         return self.quiz[questionNumber].question
     }
     
+    func getProgress() -> Float {
+        let increment = 1.0 / Float(self.quiz.count)
+        var moveBy = increment * Float(questionNumber)
+        return moveBy 
+        
+    }
+    
     
     
 
