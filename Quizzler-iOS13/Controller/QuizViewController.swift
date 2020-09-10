@@ -41,7 +41,8 @@ class QuizViewController: UIViewController {
     //MARK: - Class Methods
     @objc func updateUI() {
         
-        questionTextLabel.text = quizBrain.quiz[quizBrain.questionNumber].question
+        //questionTextLabel.text = quizBrain.quiz[quizBrain.questionNumber].question
+        questionTextLabel.text = quizBrain.getQuestionText() 
        trueButton.backgroundColor = UIColor.clear
       falseButton.backgroundColor = UIColor.clear
         

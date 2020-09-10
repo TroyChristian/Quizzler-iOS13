@@ -54,6 +54,10 @@ struct QuizBrain {
         
     }
     
+    func getQuestionText() -> String {
+        return self.quiz[questionNumber].question
+    }
+    
     
     
 
